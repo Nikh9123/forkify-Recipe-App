@@ -116,7 +116,7 @@ const controlAddRecipe = async function (newRecipe) {
     //CHANGE ID IN URL
     window.history.pushState(null, '', `#{model.state.recipe.id}`);
     window.history.back();  
-     
+
     //5) CLOSE FORM WINDOW
     setTimeout(function () {
       addRecipeView.toggleWindow();
@@ -127,6 +127,10 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
+const newFeature = function(){
+  console.log('New Feature Added');
+}
+
 const init = function () {
   bookmarkView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
@@ -135,5 +139,6 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
+  newFeature();
 };
 init();
